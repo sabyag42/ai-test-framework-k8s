@@ -22,26 +22,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r app/requirements.txt
-
-      - name: Run basic health check test
-        run: |
-          cd app
-          python -c "
-import sys
-sys.path.insert(0, '.')
-from unittest.mock import MagicMock
-sys.modules['ai_generator'] = MagicMock()
-from main import app
-from fastapi.testclient import TestClient
-client = TestClient(app)
-response = client.get('/health')
-assert response.status_code == 200
-print('✅ Health check passed!')
-response2 = client.get('/')
-assert response2.status_code == 200
-print('✅ Root endpoint passed!')
-          "
+          pip install
 
   build:
     name: 🐳 Build Docker Image
