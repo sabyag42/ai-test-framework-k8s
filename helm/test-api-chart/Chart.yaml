@@ -1,0 +1,14 @@
+apiVersion: v2
+name: test-api-chart
+description: AI-Powered Test Framework API deployed on Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - api
+  - testing
+  - ai
+  - kubernetes
+maintainers:
+  - name: Sabyasachi
+    email: sabyaqa@gmail.com

@@ -1,0 +1,14 @@
+Get your service URL:
+  minikube service {{ .Release.Name }}-service -n {{ .Values.namespace }} --url
+
+Test your API:
+  curl http://YOUR_URL/health
+  curl http://YOUR_URL/
+
+Generate AI test cases:
+  curl -X POST http://YOUR_URL/generate-tests \
+    -H "Content-Type: application/json" \
+    -d '{"endpoint": "/login", "method": "POST", "description": "Login API", "num_cases": 3}'
+
+Check pods:
+  kubectl get pods -n {{ .Values.namespace }}
